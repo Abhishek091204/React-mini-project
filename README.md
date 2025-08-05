@@ -1,198 +1,84 @@
-# 🌤️ Weather Dashboard Application
+# 🌤️ Weather App
 
-A modern, responsive weather application built with React and Material-UI that provides real-time weather information with an intuitive user interface.
+A simple weather application built with React and Material-UI that shows current weather information for any city.
 
-![Weather App Demo](https://via.placeholder.com/800x400/74b9ff/ffffff?text=Weather+Dashboard+Screenshot)
+## Features
 
-## ✨ Features
+- Search for weather by city name
+- Display current temperature, humidity, and weather conditions
+- Dynamic weather icons based on temperature and conditions
+- Clean, responsive design
+- Random weather background images
 
-- 🌍 **Real-time Weather Data** - Get current weather information for any city worldwide
-- 🎨 **Dynamic Weather Icons** - Context-aware icons that change based on weather conditions and temperature
-- 🖼️ **Random Weather Images** - Beautiful, random weather-related images from Unsplash
-- 📱 **Responsive Design** - Fixed viewport layout that works perfectly on all devices
-- 🎯 **Non-scrollable Interface** - Clean, dashboard-style layout that fits any screen
-- ⚡ **Fast Performance** - Optimized with Vite for lightning-fast development and builds
-- 🔍 **Smart Search** - Easy city search with error handling and validation
+## Technologies Used
 
-## 🚀 Live Demo
+- React 19
+- Material-UI (MUI)
+- Vite
+- OpenWeatherMap API
+- JavaScript (ES6+)
 
-[View Live Demo](https://your-deployed-app-link.vercel.app) *(Replace with your actual deployment link)*
+## Installation
 
-## 🛠️ Technologies Used
-
-- **Frontend Framework**: React 19
-- **UI Library**: Material-UI (MUI) v7
-- **Build Tool**: Vite
-- **Styling**: CSS3, Material-UI Components
-- **API**: OpenWeatherMap API
-- **Icons**: Material-UI Icons
-- **Images**: Unsplash API
-- **Language**: JavaScript (ES6+)
-
-## 📦 Installation & Setup
-
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-- OpenWeatherMap API key
-
-### Step 1: Clone the Repository
+1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/weather-dashboard.git
-cd weather-dashboard
+git clone https://github.com/Abhishek091204/Web-Development.git
 ```
 
-### Step 2: Install Dependencies
+2. Navigate to the project directory:
+```bash
+cd MATERIALUI/mini-project-react
+```
+
+3. Install dependencies:
 ```bash
 npm install
 ```
 
-### Step 3: Get API Key
-1. Visit [OpenWeatherMap](https://openweathermap.org/api)
-2. Sign up for a free account
-3. Generate your API key
-4. Copy your API key
+4. Get your API key from [OpenWeatherMap](https://openweathermap.org/api)
 
-### Step 4: Configure API Key
-1. Open `src/SearchBox.jsx`
-2. Replace the API_KEY with your actual key:
+5. Add your API key in `src/SearchBox.jsx`:
 ```javascript
 const API_KEY = 'your_api_key_here';
 ```
 
-### Step 5: Run the Application
+6. Start the development server:
 ```bash
 npm run dev
 ```
 
-The application will open in your browser at `http://localhost:5173`
+## Usage
 
-## 🎮 Usage
+1. Enter a city name in the search box
+2. Click the "Search" button
+3. View the weather information displayed on the card
 
-1. **Search for a City**: Enter any city name in the search field
-2. **View Weather Data**: Get comprehensive weather information including:
-   - Current temperature
-   - Humidity levels
-   - Minimum and maximum temperatures
-   - "Feels like" temperature
-   - Weather conditions
-3. **Dynamic Icons**: Icons automatically change based on:
-   - Temperature (hot/cold)
-   - Weather conditions (rain, clouds, storms)
-4. **Visual Appeal**: Each search displays a new random weather-related background image
+## Weather Icons
 
-## 🏗️ Project Structure
+The app displays different icons based on weather conditions:
+- ☀️ Sunny (temperature ≥ 25°C)
+- ❄️ Cold (temperature ≤ 15°C)
+- ☂️ Rainy weather
+- ⛈️ Thunderstorms
+- ☁️ Cloudy weather
+
+## Project Structure
 
 ```
 src/
-├── components/
-│   ├── WeatherApp.jsx      # Main application component
-│   ├── SearchBox.jsx       # Search input and API integration
-│   ├── InfoBox.jsx         # Weather information display
-│   └── MapBox.jsx          # Map component (optional)
-├── styles/
-│   ├── App.css
-│   ├── InfoBox.css
-│   ├── SearchBox.css
-│   └── index.css
-├── App.jsx                 # Root component
-└── main.jsx               # Application entry point
+├── WeatherApp.jsx    # Main component
+├── SearchBox.jsx     # Search input and API calls
+├── InfoBox.jsx       # Weather display card
+├── App.jsx
+└── main.jsx
 ```
 
-## 🌟 Key Features Breakdown
-
-### Weather Icons Logic
-```javascript
-// Icons change based on conditions:
-- Temperature ≤ 15°C → ❄️ Snow icon (Cold)
-- Temperature ≥ 25°C → ☀️ Sun icon (Hot)
-- Rain/Drizzle → ☂️ Umbrella icon
-- Thunderstorm → ⛈️ Storm icon
-- Cloudy → ☁️ Cloud icon
-- Default → ☀️ Sun icon (Moderate)
-```
-
-### API Integration
-- **Weather Data**: OpenWeatherMap Current Weather API
-- **Geocoding**: OpenWeatherMap Geocoding API for coordinates
-- **Error Handling**: Comprehensive error management with user alerts
-- **Loading States**: Visual feedback during API calls
-
-## 📱 Responsive Design
-
-- **Desktop**: Full-width card with optimal spacing
-- **Tablet**: Responsive card that adapts to screen size
-- **Mobile**: Compact layout optimized for small screens
-- **Fixed Layout**: No scrolling required, everything fits in viewport
-
-## 🔧 Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint for code quality
 
-## 🚀 Deployment
+## Author
 
-### Deploy to Vercel
-1. Push your code to GitHub
-2. Connect your GitHub repository to Vercel
-3. Deploy automatically
-
-### Deploy to Netlify
-1. Build the project: `npm run build`
-2. Upload the `dist` folder to Netlify
-
-### Environment Variables
-Set your API key as an environment variable for production:
-- `VITE_WEATHER_API_KEY=your_api_key_here`
-
-## 🔮 Future Enhancements
-
-- [ ] 7-day weather forecast
-- [ ] Interactive maps with Mapbox
-- [ ] Location-based weather (geolocation)
-- [ ] Weather alerts and notifications
-- [ ] Historical weather data
-- [ ] Multiple city comparison
-- [ ] Dark/light theme toggle
-- [ ] Offline support with service workers
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Abhishek**
-- GitHub: [@Abhishek091204](https://github.com/Abhishek091204)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
-
-## 🙏 Acknowledgments
-
-- [OpenWeatherMap](https://openweathermap.org/) for providing the weather API
-- [Material-UI](https://mui.com/) for the beautiful component library
-- [Unsplash](https://unsplash.com/) for high-quality weather images
-- [Vite](https://vitejs.dev/) for the fast build tool
-
-## 📊 Project Stats
-
-- **Lines of Code**: ~300+
-- **Components**: 4 main components
-- **API Endpoints**: 2 (Weather & Geocoding)
-- **Dependencies**: Material-UI, React, Vite
-- **Build Size**: ~500KB (optimized)
-
----
-
-⭐ **Star this repository if you found it helpful!**
-
-*Made with ❤️ and ☕ by Abhishek*
+Abhishek - [@Abhishek091204](https://github.com/Abhishek091204)
